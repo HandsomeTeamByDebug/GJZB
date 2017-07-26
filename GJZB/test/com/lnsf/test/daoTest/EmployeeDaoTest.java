@@ -18,6 +18,7 @@ public class EmployeeDaoTest {
 	@Test
 	public void getMaxEmpno(){
 		try {
+			//Œ∞¡·
 			int i = employeeDao.getMaxEmpno();
 			System.out.println(i);
 			
