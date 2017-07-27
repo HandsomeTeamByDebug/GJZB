@@ -9,6 +9,12 @@ import com.lnsf.dao.UserDao;
 import com.lnsf.entity.User;
 import com.lnsf.service.UserService;
 
+
+/**
+* @author 黄浩贡
+* @version 创建时间：2017年7月27日10:46:31
+* @introduction  增加修改用户操作的实现类
+*/
 @Service("userService")
 public class UserServiceImpl implements UserService{
 
@@ -28,5 +34,22 @@ public class UserServiceImpl implements UserService{
 	}
 	public int addOneUser(User user){
 		return userDao.addOneUser(user);
+	}
+	@Override
+	public int updateUserName(User user) {
+		// TODO Auto-generated method stub
+		return userDao.updateUserNameByID(user);
+	}
+
+	@Override
+	public int updateUserPw(User user) {
+		// TODO Auto-generated method stub
+		return userDao.updateUserPwByID(user);
+	}
+
+	@Override
+	public int updateUserintroduc(User user) {
+		// TODO Auto-generated method stub
+		return userDao.updateUserIntroduByID(user);
 	}
 }
