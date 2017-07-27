@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,47 +8,18 @@
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <link rel="stylesheet" href="easyui/themes/black/easyui.css" />
 <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+<link rel="stylesheet" href="css/user.css" />
 <!--//引入EasyUI中文提示信息-->
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
-<style type="text/css">
-.logo {
-	width: 180px;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	font-size: 20px;
-	font-weight: bold;
-	float: left;
-	color: #fff;
-}
-
-.logout {
-	float: right;
-	padding: 30px 15px 0 0;
-	color: #fff;
-}
-
-a {
-	color: #fff;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-</style>
+<!-- <script type="text/javascript" src="js/user.js"></script> -->
+<title>国际招标系统</title>
 </head>
+<body>
 <body class="easyui-layout">
 	<div
 		data-options="region:'north',title:'header',split:true,noheader:true"
 		style="height: 60px; background: #666;">
-		<div class="logo">后台管理</div>
-		<div class="logout">
-			 <a href="ht/exit">	登录</a> | <a href="ht/exit"> 注册</a>
-			 <!-- 测试删除和添加 author:weiling -->
-			 <a href='Users/showUserById'>根据ID展示用户（内部设定了ID=2）</a>
-			 <a href='Users/showAllUsers'>展示所有用户</a>
-		</div>
+		<jsp:include page="header.jsp"/>
 	</div>
 	<div
 		data-options="region:'south',title:'footer',split:true,noheader:true"
@@ -68,6 +39,45 @@ a:hover {
 	</div>
 	
 	
+	<script type="text/javascript">
+		$(function() {
+			$('#tabs').tabs({
+				fit : true,
+				border : false,
+			});
+			//导航条
+			$('#nav').tree({
+				url : 'nav',
+				lines : true,
+				animate:true,
+				onLoadSuccess : function(node, data) {
+					var _this = this;
+					if (data) {
+						$(data).each(function(index, value) {
+							if (this.state == 'closed') {
+								$(_this).tree('expandAll');
+							}
+						});
+					}
+				},
+				onClick : function(node) {
+					if (node.url) {  // url分别为：manager、user
+						if ($('#tabs').tabs('exists', node.text)) {
+							$('#tabs').tabs('select', node.text)
+						} else {
+							$('#tabs').tabs('add', {
+								title : node.text,
+								closable : true,
+								iconCls : node.iconCls,
+								href : node.url+'.jsp',
+							});
+						}
+					}
+				}
+			});
+
+		});
+	</script>
 	
 </body>
 </html>
