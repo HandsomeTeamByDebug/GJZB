@@ -8,18 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.lnsf.dao.impl.UserDaoImpl;
+import com.lnsf.dao.UserDao;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/applicationContext.xml")
 public class UserDaoTest {
 
 	@Autowired
-	private UserDaoImpl userimpl;
+	private UserDao userdao;
 	@Test
 	public void testGetUserById() {
 		try{
-			System.out.println(userimpl.getUserById(2));
+			System.out.println(userdao.getUserById(2));
 			
 		}catch(Exception e){
 			e.printStackTrace();
@@ -30,7 +31,7 @@ public class UserDaoTest {
 	@Test
 	public void testGetAllUser() {
 		try{
-			System.out.println(userimpl.getAllUsers());
+			System.out.println(userdao.getAllUsers());
 			
 		}catch(Exception e){
 			e.printStackTrace();
