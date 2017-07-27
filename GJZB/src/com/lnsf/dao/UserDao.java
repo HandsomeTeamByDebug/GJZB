@@ -44,6 +44,7 @@ public interface UserDao {
 	//根据Id修改个人简介
 	@Update("update Gjzb_User set introduction=#{introduction} where userId=#{userId}")
 	public int updateUserIntroduByID(User user);
+	
 	//添加用户信息
 	@Insert("insert ")
 	int addOneUser(User user);
