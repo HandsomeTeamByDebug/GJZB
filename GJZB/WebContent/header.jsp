@@ -20,12 +20,6 @@
 		color: #fff;
 	}
 	
-	<script type="text/javascript">
-  		function _change(){
-			var img = document.getElementById("vCode");
-			img.src = "getVerifyCode?a="+new Date().getTime();
-  		} 
-	</script>
 </style>
 </head>
 <body>
@@ -83,7 +77,7 @@
 
 		</form>
 		
-		
+	</div>	
 		<!--登录表单-->
 	<div id="login_div" class="easyui-dialog" data-options="modal:true,closed:true">
 		<form action="" id="login_form">
@@ -112,5 +106,5 @@
 			<input type="reset" id="login_reset" value="重置" />
 		</form>
 	</div>
-	</div>
+	
 </body>
