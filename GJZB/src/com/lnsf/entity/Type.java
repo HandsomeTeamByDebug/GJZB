@@ -2,12 +2,12 @@ package com.lnsf.entity;
 
 public class Type {
 	private Integer typeId;      //主键ID
-	private Project projectType;   //项目合同对象
+	private String projectType;   //项目合同对象
 	
 	public Type() {
 		super();
 	}
-	public Type(Integer typeId, Project projectType) {
+	public Type(Integer typeId, String projectType) {
 		super();
 		this.typeId = typeId;
 		this.projectType = projectType;
@@ -19,10 +19,10 @@ public class Type {
 	public void setTypeId(Integer typeId) {
 		this.typeId = typeId;
 	}
-	public Project getProjectType() {
+	public String getProjectType() {
 		return projectType;
 	}
-	public void setProjectType(Project projectType) {
+	public void setProjectType(String projectType) {
 		this.projectType = projectType;
 	}
 	@Override

@@ -46,6 +46,9 @@ public interface UserDao {
 	public int updateUserIntroduByID(User user);
 	
 	//添加用户信息
-	@Insert("insert ")
+	@Insert("insert into gjzb_user values(userseq.nextval,"
+			+ "#{userName},#{userPw},#{phone},#{email},#{introduction},#{profilePic},'0',0,0)")
 	int addOneUser(User user);
+//insert into gjzb_user 
+//	values(userseq.nextval,'hhg','admin','13437869863','2489077903@qq.com','只知道是一个男的','1.jpg','1',1,20000);
 }

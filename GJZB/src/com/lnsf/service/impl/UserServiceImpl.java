@@ -32,7 +32,9 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		return userDao.getUserById(userId);
 	}
-
+	public int addOneUser(User user){
+		return userDao.addOneUser(user);
+	}
 	@Override
 	public int updateUserName(User user) {
 		// TODO Auto-generated method stub

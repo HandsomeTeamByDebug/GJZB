@@ -6,15 +6,11 @@ import java.util.List;
 
 import com.lnsf.entity.User;
 /**
-* @author 劳伟玲 
+* @author 劳伟玲   
 * @version 创建时间：2017年7月26日21:29:22
 * @introduction  创建用户业务层接口UserService
 */
-/**
-* @author 黄浩贡
-* @version 创建时间：2017年7月27日10:31:46
-* @introduction  增加几个修改的方法
-*/
+
 public interface UserService {
 	//查询全部用户信息
 	List<User> getAllUsers();
@@ -26,5 +22,11 @@ public interface UserService {
 	public int updateUserName(User user);
 	public int updateUserPw(User user);
 	public int updateUserintroduc(User user);
-
+	
+	/**
+	* @author 黄卉  
+	* @version 创建时间：2017年7月27日11:01:12
+	* @introduction  添加用户业务逻辑
+	*/
+	int addOneUser(User user);
 }
