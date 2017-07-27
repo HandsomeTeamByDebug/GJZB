@@ -24,8 +24,8 @@ public interface UserDao {
 	User getUserById(Integer userId);
 	
 	//按用户id删除个人用户信息
-	//@Delete("delete from gjzb_user where userId=#{userId}")
-	//int deleteUserById(Integer userId);
+	@Delete("delete from gjzb_user where userId=#{userId}")
+	int deleteUserById(Integer userId);
 	
 	//添加用户信息
 	@Insert("insert ")
