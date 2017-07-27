@@ -5,6 +5,7 @@ package com.lnsf.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -29,8 +30,8 @@ public interface UserDao {
 	User getUserById(Integer userId);
 	
 	//按用户id删除个人用户信息
-	//@Delete("delete from gjzb_user where userId=#{userId}")
-	//int deleteUserById(Integer userId);
+	@Delete("delete from gjzb_user where userId=#{userId}")
+	int deleteUserById(Integer userId);
 	
 	//根据Id修改用户名
 	@Update("update Gjzb_User set userName=#{userName} where userId=#{userId}")
@@ -43,5 +44,7 @@ public interface UserDao {
 	//根据Id修改个人简介
 	@Update("update Gjzb_User set introduction=#{introduction} where userId=#{userId}")
 	public int updateUserIntroduByID(User user);
-
+	//添加用户信息
+	@Insert("insert ")
+	int addOneUser(User user);
 }

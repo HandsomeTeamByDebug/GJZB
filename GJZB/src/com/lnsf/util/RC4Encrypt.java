@@ -91,7 +91,5 @@ public class RC4Encrypt {
 		//    String key = "abcdefg";          
 		    //打印加密后的字符RC4Encrypt串      
 		    System.out.println("打印加密后："+RC4Encrypt.getkeyToPWD(inputStr));    
-		    
-
 	}
 }
