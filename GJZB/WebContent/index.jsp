@@ -45,6 +45,9 @@ a:hover {
 		<div class="logo">后台管理</div>
 		<div class="logout">
 			 <a href="ht/exit">	登录</a> | <a href="ht/exit"> 注册</a>
+			 <!-- 测试删除和添加 author:weiling -->
+			 <a href='Users/showUserById'>根据ID展示用户（内部设定了ID=2）</a>
+			 <a href='Users/showAllUsers'>展示所有用户</a>
 		</div>
 	</div>
 	<div
@@ -65,7 +68,6 @@ a:hover {
 	</div>
 	
 	
-	<a href='Users/showUserById'>根据ID展示用户（内部设定了ID=2）</a>
-	<a href='Users/showAllUsers'>展示所有用户</a>
+	
 </body>
 </html>
